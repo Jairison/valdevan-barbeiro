@@ -1,0 +1,1012 @@
+/* =========================================================
+   WX BARBEARIA
+   AGENDAR HORÁRIO
+   IDENTIDADE: PRETO + DOURADO
+========================================================= */
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================================
+   BODY
+========================================================= */
+
+body {
+
+    min-height: 100vh;
+
+    font-family: 'Poppins', sans-serif;
+
+    color: #f5f5f5;
+
+    background:
+
+        radial-gradient(
+            circle at 50% 0%,
+            rgba(212, 175, 55, 0.14),
+            transparent 35%
+        ),
+
+        radial-gradient(
+            circle at 0% 100%,
+            rgba(212, 175, 55, 0.08),
+            transparent 30%
+        ),
+
+        linear-gradient(
+            135deg,
+            #020202 0%,
+            #090909 45%,
+            #030303 100%
+        );
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    padding: 40px 20px;
+
+    overflow-x: hidden;
+
+    position: relative;
+}
+
+
+/* =========================================================
+   TEXTURA DE FUNDO
+========================================================= */
+
+body::before {
+
+    content: "";
+
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    opacity: 0.18;
+
+    background-image:
+
+        linear-gradient(
+            30deg,
+            #d4af37 12%,
+            transparent 12.5%,
+            transparent 87%,
+            #d4af37 87.5%
+        ),
+
+        linear-gradient(
+            150deg,
+            #d4af37 12%,
+            transparent 12.5%,
+            transparent 87%,
+            #d4af37 87.5%
+        );
+
+    background-size: 80px 80px;
+
+    mask-image: linear-gradient(
+        to bottom,
+        transparent,
+        black 20%,
+        black 80%,
+        transparent
+    );
+
+    z-index: -2;
+}
+
+
+/* =========================================================
+   EFEITO DE LUZ
+========================================================= */
+
+body::after {
+
+    content: "";
+
+    position: fixed;
+
+    width: 500px;
+
+    height: 500px;
+
+    border-radius: 50%;
+
+    background: rgba(212, 175, 55, 0.08);
+
+    filter: blur(120px);
+
+    top: -250px;
+
+    right: -180px;
+
+    pointer-events: none;
+
+    z-index: -1;
+}
+
+
+/* =========================================================
+   CONTAINER
+========================================================= */
+
+.container {
+
+    width: 100%;
+
+    max-width: 560px;
+
+    position: relative;
+
+    animation: aparecer 0.8s ease forwards;
+}
+
+
+/* =========================================================
+   ANIMAÇÃO
+========================================================= */
+
+@keyframes aparecer {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(30px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* =========================================================
+   VOLTAR
+========================================================= */
+
+.voltar {
+
+    margin-bottom: 20px;
+}
+
+
+.voltar button {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    padding: 11px 18px;
+
+    border: 1px solid rgba(212, 175, 55, 0.35);
+
+    border-radius: 10px;
+
+    background: rgba(0, 0, 0, 0.55);
+
+    color: #d4af37;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 14px;
+
+    cursor: pointer;
+
+    transition: all 0.3s ease;
+
+    backdrop-filter: blur(10px);
+}
+
+
+.voltar button i {
+
+    font-size: 13px;
+
+}
+
+
+.voltar button:hover {
+
+    color: #fff;
+
+    border-color: #d4af37;
+
+    background: rgba(212, 175, 55, 0.12);
+
+    transform: translateX(-4px);
+
+    box-shadow:
+        0 0 15px rgba(212, 175, 55, 0.15);
+}
+
+
+/* =========================================================
+   CARD
+========================================================= */
+
+.card {
+
+    position: relative;
+
+    padding: 42px;
+
+    border-radius: 24px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            rgba(25, 25, 25, 0.96),
+            rgba(7, 7, 7, 0.97)
+        );
+
+    border: 1px solid rgba(212, 175, 55, 0.28);
+
+    box-shadow:
+
+        0 30px 80px rgba(0, 0, 0, 0.75),
+
+        inset 0 1px 0 rgba(255, 255, 255, 0.05),
+
+        0 0 40px rgba(212, 175, 55, 0.05);
+
+    backdrop-filter: blur(18px);
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   LINHA DOURADA SUPERIOR
+========================================================= */
+
+.card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 8%;
+
+    width: 84%;
+
+    height: 2px;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            #8f6b20,
+            #fff1a8,
+            #d4af37,
+            #8f6b20,
+            transparent
+        );
+
+    box-shadow:
+        0 0 15px rgba(212, 175, 55, 0.55);
+}
+
+
+/* =========================================================
+   BRILHO INTERNO
+========================================================= */
+
+.card::after {
+
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+
+    height: 220px;
+
+    top: -120px;
+
+    right: -100px;
+
+    border-radius: 50%;
+
+    background: rgba(212, 175, 55, 0.08);
+
+    filter: blur(60px);
+
+    pointer-events: none;
+}
+
+
+/* =========================================================
+   ÍCONE PRINCIPAL
+========================================================= */
+
+.logo-icon {
+
+    width: 76px;
+
+    height: 76px;
+
+    margin: 0 auto 22px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    border: 1px solid #d4af37;
+
+    background:
+
+        radial-gradient(
+            circle,
+            #29200a,
+            #080808 70%
+        );
+
+    box-shadow:
+
+        0 0 0 5px rgba(212, 175, 55, 0.05),
+
+        0 0 25px rgba(212, 175, 55, 0.18),
+
+        inset 0 0 20px rgba(212, 175, 55, 0.08);
+
+    position: relative;
+
+    z-index: 2;
+}
+
+
+.logo-icon::before {
+
+    content: "";
+
+    position: absolute;
+
+    inset: -7px;
+
+    border-radius: 50%;
+
+    border: 1px solid rgba(212, 175, 55, 0.18);
+
+}
+
+
+.logo-icon i {
+
+    font-size: 29px;
+
+    color: #d4af37;
+
+    text-shadow:
+
+        0 0 8px rgba(212, 175, 55, 0.45),
+
+        0 0 20px rgba(212, 175, 55, 0.2);
+
+}
+
+
+/* =========================================================
+   TÍTULO
+========================================================= */
+
+.card h1 {
+
+    text-align: center;
+
+    font-size: 31px;
+
+    font-weight: 600;
+
+    letter-spacing: -0.5px;
+
+    color: #ffffff;
+
+    margin-bottom: 8px;
+}
+
+
+/* =========================================================
+   SUBTÍTULO
+========================================================= */
+
+.card > p {
+
+    text-align: center;
+
+    color: #9b9b9b;
+
+    font-size: 14px;
+
+    margin-bottom: 32px;
+
+    font-weight: 300;
+}
+
+
+.card > p strong {
+
+    color: #d4af37;
+
+    font-weight: 500;
+}
+
+
+/* =========================================================
+   INPUT BOX
+========================================================= */
+
+.input-box {
+
+    margin-bottom: 20px;
+
+    position: relative;
+}
+
+
+/* =========================================================
+   LABEL
+========================================================= */
+
+.input-box label {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    margin-bottom: 8px;
+
+    color: #d5d5d5;
+
+    font-size: 13px;
+
+    font-weight: 500;
+}
+
+
+.input-box label i {
+
+    color: #d4af37;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   INPUT / SELECT / TEXTAREA
+========================================================= */
+
+.input-box input,
+.input-box select,
+.input-box textarea {
+
+    width: 100%;
+
+    border: 1px solid #292929;
+
+    border-radius: 12px;
+
+    padding: 14px 15px;
+
+    background:
+
+        linear-gradient(
+            145deg,
+            #151515,
+            #0d0d0d
+        );
+
+    color: #f5f5f5;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition:
+
+        border-color 0.3s ease,
+
+        box-shadow 0.3s ease,
+
+        background 0.3s ease;
+}
+
+
+/* =========================================================
+   PLACEHOLDER
+========================================================= */
+
+.input-box input::placeholder,
+.input-box textarea::placeholder {
+
+    color: #666;
+
+    font-weight: 300;
+}
+
+
+/* =========================================================
+   FOCUS
+========================================================= */
+
+.input-box input:focus,
+.input-box select:focus,
+.input-box textarea:focus {
+
+    border-color: #d4af37;
+
+    background: #111;
+
+    box-shadow:
+
+        0 0 0 3px rgba(212, 175, 55, 0.08),
+
+        0 0 20px rgba(212, 175, 55, 0.08);
+}
+
+
+/* =========================================================
+   SELECT
+========================================================= */
+
+.input-box select {
+
+    cursor: pointer;
+
+    appearance: none;
+
+    background-image:
+
+        linear-gradient(45deg, transparent 50%, #d4af37 50%),
+
+        linear-gradient(135deg, #d4af37 50%, transparent 50%);
+
+    background-position:
+
+        calc(100% - 18px) 50%,
+
+        calc(100% - 12px) 50%;
+
+    background-size:
+
+        6px 6px,
+
+        6px 6px;
+
+    background-repeat: no-repeat;
+}
+
+
+.input-box select option {
+
+    background: #111;
+
+    color: #fff;
+}
+
+
+/* =========================================================
+   TEXTAREA
+========================================================= */
+
+.input-box textarea {
+
+    min-height: 110px;
+
+    resize: vertical;
+
+}
+
+
+/* =========================================================
+   DATA E HORA
+========================================================= */
+
+.dupla {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 15px;
+}
+
+
+/* =========================================================
+   INPUT DATE / TIME
+========================================================= */
+
+input[type="date"],
+input[type="time"] {
+
+    color-scheme: dark;
+
+}
+
+
+/* =========================================================
+   BOTÃO WHATSAPP
+========================================================= */
+
+.btn-whatsapp {
+
+    width: 100%;
+
+    margin-top: 8px;
+
+    padding: 16px 20px;
+
+    border: 1px solid #d4af37;
+
+    border-radius: 13px;
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #f0c84b 0%,
+            #d4af37 45%,
+            #a67c1f 100%
+        );
+
+    color: #080808;
+
+    font-family: 'Poppins', sans-serif;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    box-shadow:
+
+        0 8px 25px rgba(212, 175, 55, 0.18),
+
+        inset 0 1px 0 rgba(255, 255, 255, 0.4);
+
+    transition: all 0.3s ease;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+
+/* =========================================================
+   BRILHO DO BOTÃO
+========================================================= */
+
+.btn-whatsapp::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: -120%;
+
+    width: 80%;
+
+    height: 100%;
+
+    background:
+
+        linear-gradient(
+            90deg,
+            transparent,
+            rgba(255, 255, 255, 0.35),
+            transparent
+        );
+
+    transform: skewX(-20deg);
+
+    transition: 0.7s;
+}
+
+
+.btn-whatsapp:hover::before {
+
+    left: 140%;
+}
+
+
+.btn-whatsapp:hover {
+
+    transform: translateY(-2px);
+
+    background:
+
+        linear-gradient(
+            135deg,
+            #ffe68a,
+            #d4af37,
+            #b88922
+        );
+
+    box-shadow:
+
+        0 12px 35px rgba(212, 175, 55, 0.28),
+
+        0 0 20px rgba(212, 175, 55, 0.12);
+}
+
+
+.btn-whatsapp:active {
+
+    transform: translateY(0);
+
+}
+
+
+.btn-whatsapp i {
+
+    font-size: 20px;
+}
+
+
+/* =========================================================
+   INFORMAÇÃO
+========================================================= */
+
+.info {
+
+    margin-top: 24px;
+
+    padding-top: 18px;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.07);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 8px;
+
+    color: #777;
+
+    font-size: 11px;
+
+    text-align: center;
+}
+
+
+.info i {
+
+    color: #d4af37;
+
+    font-size: 12px;
+}
+
+
+/* =========================================================
+   SCROLLBAR
+========================================================= */
+
+::-webkit-scrollbar {
+
+    width: 8px;
+
+}
+
+
+::-webkit-scrollbar-track {
+
+    background: #050505;
+
+}
+
+
+::-webkit-scrollbar-thumb {
+
+    background:
+
+        linear-gradient(
+            #d4af37,
+            #8f6b20
+        );
+
+    border-radius: 20px;
+
+}
+
+
+::-webkit-scrollbar-thumb:hover {
+
+    background: #e4c45a;
+
+}
+
+
+/* =========================================================
+   RESPONSIVIDADE
+========================================================= */
+
+@media (max-width: 600px) {
+
+    body {
+
+        padding: 25px 15px;
+
+        align-items: flex-start;
+
+    }
+
+
+    .container {
+
+        max-width: 100%;
+
+    }
+
+
+    .voltar {
+
+        margin-bottom: 15px;
+
+    }
+
+
+    .card {
+
+        padding: 30px 20px;
+
+        border-radius: 20px;
+
+    }
+
+
+    .card h1 {
+
+        font-size: 25px;
+
+    }
+
+
+    .card > p {
+
+        font-size: 13px;
+
+        margin-bottom: 27px;
+
+    }
+
+
+    .logo-icon {
+
+        width: 68px;
+
+        height: 68px;
+
+        margin-bottom: 18px;
+
+    }
+
+
+    .logo-icon i {
+
+        font-size: 25px;
+
+    }
+
+
+    .dupla {
+
+        grid-template-columns: 1fr;
+
+        gap: 0;
+
+    }
+
+
+    .input-box input,
+    .input-box select,
+    .input-box textarea {
+
+        padding: 13px;
+
+        font-size: 13px;
+
+    }
+
+
+    .btn-whatsapp {
+
+        padding: 15px;
+
+        font-size: 13px;
+
+    }
+
+}
+
+
+/* =========================================================
+   CELULARES PEQUENOS
+========================================================= */
+
+@media (max-width: 380px) {
+
+    body {
+
+        padding: 18px 10px;
+
+    }
+
+
+    .card {
+
+        padding: 25px 16px;
+
+    }
+
+
+    .card h1 {
+
+        font-size: 22px;
+
+    }
+
+
+    .voltar button {
+
+        padding: 9px 14px;
+
+        font-size: 12px;
+
+    }
+
+
+    .info {
+
+        font-size: 10px;
+
+    }
+
+}

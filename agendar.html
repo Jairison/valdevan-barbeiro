@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Agendar Horário | Valdevan Barbeiro</title>
+
+    <link rel="stylesheet" href="agendar.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+
+        <!-- VOLTAR -->
+        <div class="voltar">
+
+            <button onclick="history.back()">
+
+                <i class="fa-solid fa-arrow-left"></i>
+
+                Voltar
+
+            </button>
+
+        </div>
+
+
+        <!-- CARD -->
+        <div class="card">
+
+            <!-- ÍCONE -->
+            <div class="logo-icon">
+
+                <i class="fa-solid fa-scissors"></i>
+
+            </div>
+
+
+            <h1>Agendar Horário</h1>
+
+            <p>
+                Reserve seu horário na
+                <strong>Valdevan Barbearia</strong>
+            </p>
+
+
+            <!-- FORMULÁRIO -->
+            <form id="formulario">
+
+
+                <!-- NOME -->
+                <div class="input-box">
+
+                    <label for="nome">
+                        <i class="fa-solid fa-user"></i>
+                        Nome Completo
+                    </label>
+
+                    <input
+                        type="text"
+                        id="nome"
+                        placeholder="Digite seu nome"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- WHATSAPP -->
+                <div class="input-box">
+
+                    <label for="telefone">
+
+                        <i class="fa-brands fa-whatsapp"></i>
+
+                        WhatsApp
+
+                    </label>
+
+                    <input
+                        type="tel"
+                        id="telefone"
+                        placeholder="(88) 999999999"
+                        required
+                    >
+
+                </div>
+
+
+                <!-- SERVIÇO -->
+                <div class="input-box">
+
+                    <label for="servico">
+
+                        <i class="fa-solid fa-scissors"></i>
+
+                        Serviço
+
+                    </label>
+
+                    <select id="servico" required>
+
+                        <option value="" disabled selected>
+                            Selecione um serviço
+                        </option>
+
+                        <option value="Corte Masculino ">
+                            Corte 
+                        </option>
+
+                        <option value="Corte + Barba">
+                            Corte + Barba
+                        </option>
+
+                        <option value="Barba - R$ 25,00">
+                            Barba 
+                        </option>
+
+                        <option value="Corte + Sobrancelha - R$ 45,00">
+                            Corte + Sobrancelha 
+                        </option>
+
+                        <option value="Barba + Sobrancelha - R$ 35,00">
+                            Barba + Sobrancelha
+                        </option>
+
+                        <option value="Corte + Barba + Sobrancelha - R$ 65,00">
+                            Corte + Barba + Sobrancelha 
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <!-- DATA + HORÁRIO -->
+                <div class="dupla">
+
+
+                    <!-- DATA -->
+                    <div class="input-box">
+
+                        <label for="data">
+
+                            <i class="fa-solid fa-calendar-days"></i>
+
+                            Data
+
+                        </label>
+
+                        <input
+                            type="date"
+                            id="data"
+                            required
+                        >
+
+                    </div>
+
+
+                    <!-- HORÁRIO -->
+                    <div class="input-box">
+
+                        <label for="hora">
+
+                            <i class="fa-solid fa-clock"></i>
+
+                            Horário
+
+                        </label>
+
+                        <input
+                            type="time"
+                            id="hora"
+                            required
+                        >
+
+                    </div>
+
+                </div>
+
+
+                <!-- OBSERVAÇÕES -->
+                <div class="input-box">
+
+                    <label for="obs">
+
+                        <i class="fa-solid fa-message"></i>
+
+                        Observações
+
+                    </label>
+
+                    <textarea
+                        id="obs"
+                        rows="4"
+                        placeholder="Alguma preferência ou observação?"
+                    ></textarea>
+
+                </div>
+
+
+                <!-- BOTÃO WHATSAPP -->
+                <button
+                    type="button"
+                    onclick="agendarWhatsApp()"
+                    class="btn-whatsapp"
+                >
+
+                    <i class="fa-brands fa-whatsapp"></i>
+
+                    Confirmar pelo WhatsApp
+
+                </button>
+
+
+            </form>
+
+
+            <!-- RODAPÉ DO CARD -->
+            <div class="info">
+
+                <i class="fa-solid fa-shield-halved"></i>
+
+                Seu horário será confirmado pelo WhatsApp.
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- JAVASCRIPT -->
+
+    <script src="agendar.js"></script>
+
+</body>
+
+</html>

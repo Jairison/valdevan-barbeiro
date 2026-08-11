@@ -1,0 +1,179 @@
+Será que já vai no Instagram né mas e agina pelo WhatsApp esse vídeo ou amanhã talvez se não for concluído esquece o carregador está descarregado isso já fiz a parte que entrava cada botãozinho disso aqui uma página diferente tipo o agendar né você clica e agenda tipo vai pra uma página de agenda e tal aí galera quiser colocar fotada do teus cofres né tipo o serviço tu faz depois tu atualiza né aí sobre a barraria derecho aí da Whatsapp decide oi beleza não tem mais mas beleza o senhor me traz agradecer agora*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow-x:hidden;
+
+    background:
+    linear-gradient(rgba(0,0,0,.82),rgba(0,0,0,.82)),
+    url("logo/bg.png");
+
+    background-size:cover;
+    background-position:center;
+    background-attachment:fixed;
+}
+
+.container{
+    width:100%;
+    max-width:500px;
+    text-align:center;
+    padding:35px 20px;
+}
+
+.logo{
+    width:150px;
+    height:150px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid #d4af37;
+    box-shadow:0 0 30px rgba(212,175,55,.45);
+    margin-bottom:20px;
+}
+
+h1{
+    color:#fff;
+    font-size:34px;
+    font-weight:700;
+    margin-bottom:8px;
+}
+
+p{
+    color:#d4af37;
+    margin-bottom:35px;
+    font-size:15px;
+}
+
+.links{
+    display:flex;
+    flex-direction:column;
+    gap:18px;
+}
+
+.card{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+
+    text-decoration:none;
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(212,175,55,.30);
+
+    backdrop-filter:blur(12px);
+
+    color:#fff;
+
+    padding:18px 22px;
+
+    border-radius:16px;
+
+    transition:.35s;
+}
+
+.card:hover{
+
+    transform:translateY(-5px) scale(1.02);
+
+    background:#d4af37;
+
+    color:#111;
+
+    box-shadow:0 15px 35px rgba(212,175,55,.35);
+}
+
+.card i:first-child{
+
+    font-size:22px;
+    width:30px;
+}
+
+.card span{
+
+    flex:1;
+    margin-left:18px;
+    text-align:left;
+    font-weight:600;
+}
+
+.seta{
+
+    transition:.3s;
+}
+
+.card:hover .seta{
+
+    transform:translateX(8px);
+}
+
+.social{
+
+    display:flex;
+    justify-content:center;
+    gap:22px;
+    margin-top:40px;
+}
+
+.social a{
+
+    width:55px;
+    height:55px;
+
+    border-radius:50%;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#1c1c1c;
+
+    color:#d4af37;
+
+    text-decoration:none;
+
+    font-size:24px;
+
+    transition:.35s;
+}
+
+.social a:hover{
+
+    background:#d4af37;
+
+    color:#111;
+
+    transform:translateY(-8px) rotate(360deg);
+
+    box-shadow:0 10px 30px rgba(212,175,55,.45);
+}
+
+@media(max-width:600px){
+
+.logo{
+
+    width:120px;
+    height:120px;
+
+}
+
+h1{
+
+    font-size:28px;
+
+}
+
+.card{
+
+    padding:16px;
+
+}
+
+}

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Galeria de Trabalhos | Valdevan Barbeiro</title>
+
+<link rel="stylesheet" href="galeria.css">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+</head>
+
+<!-- ==============================
+     BOTÃO VOLTAR
+============================== -->
+
+<div class="voltar">
+
+    <button onclick="history.back()">
+
+        <i class="fa-solid fa-arrow-left"></i>
+
+        Voltar
+
+    </button>
+
+</div>
+
+
+<!-- ==============================
+     CABEÇALHO
+============================== -->
+
+<header>
+
+    <img
+        src="logo/logo-barbearia.jpeg"
+        class="logo"
+        alt="Valdevan Barbearia"
+    >
+
+    <h1>Galeria de Trabalhos</h1>
+
+    <p>
+        Confira alguns dos nossos cortes,
+        barbas e transformações.
+    </p>
+
+</header>
+
+
+<!-- ==============================
+     GALERIA
+============================== -->
+
+<div class="galeria">
+
+
+    <!-- CORTE MASCULINO -->
+
+    <div class="foto">
+
+        <img
+            src="galeria/img-1.jpeg"
+            alt="Corte masculino realizado na Valdevan Barbearia"
+        >
+
+        <div class="overlay">
+
+            <i class="fa-solid fa-scissors"></i>
+
+            <h3>Corte Masculino</h3>
+
+            <span>Estilo e precisão</span>
+
+        </div>
+
+    </div>
+
+
+    <!-- DEGRADÊ -->
+
+    <div class="foto">
+
+        <img
+            src="galeria/img-2.jpg"
+            alt="Corte degradê masculino"
+        >
+
+        <div class="overlay">
+
+            <i class="fa-solid fa-scissors"></i>
+
+            <h3>Corte Degradê</h3>
+
+            <span>Acabamento profissional</span>
+
+        </div>
+
+    </div>
+
+
+    <!-- BARBA -->
+
+    <div class="foto">
+
+        <img
+            src="galeria/img-3.webp"
+            alt="Barba masculina"
+        >
+
+        <div class="overlay">
+
+            <i class="fa-solid fa-user-tie"></i>
+
+            <h3>Barba</h3>
+
+            <span>Modelagem e acabamento</span>
+
+        </div>
+
+    </div>
+
+
+    <!-- CORTE + BARBA -->
+
+    <div class="foto">
+
+        <img
+            src="galeria/img-4.jpeg"
+            alt="Corte masculino e barba"
+        >
+
+        <div class="overlay">
+
+            <i class="fa-solid fa-crown"></i>
+
+            <h3>Corte + Barba</h3>
+
+            <span>Combo completo</span>
+
+        </div>
+
+    </div>
+
+
+    <!-- SOBRANCELHA -->
+
+    <div class="foto">
+
+        <img
+            src="galeria/img-5.jpeg"
+            alt="Sobrancelha masculina"
+        >
+
+        <div class="overlay">
+
+            <i class="fa-solid fa-eye"></i>
+
+            <h3>Sobrancelha Masculina</h3>
+
+            <span>Detalhes que fazem a diferença</span>
+
+        </div>
+
+    </div>
+
+
+    <!-- COMBO PREMIUM -->
+
+    <div class="foto">
+
+        <img
+            src="galeria/img-6.jpeg"
+            alt="Combo premium Valdevan Barbearia"
+        >
+
+        <div class="overlay">
+
+            <i class="fa-solid fa-star"></i>
+
+            <h3>Combo Premium</h3>
+
+            <span>Visual completo</span>
+
+        </div>
+
+    </div>
+
+    
+
+<!-- ==============================
+     LIGHTBOX
+============================== -->
+
+<div id="lightbox" class="lightbox">
+
+    <button
+        class="fechar"
+        aria-label="Fechar imagem"
+    >
+
+        &times;
+
+    </button>
+
+
+    <img
+        id="imagemGrande"
+        src=""
+        alt="Imagem ampliada"
+    >
+
+
+    <div class="lightbox-info">
+
+        <h3 id="tituloImagem">
+            Valdevan Barbearia
+        </h3>
+
+        <p>
+            Confira nosso trabalho em detalhes.
+        </p>
+
+    </div>
+
+</div>
